@@ -52,10 +52,10 @@ const FullPost: React.FC<{ auth: IAuthUser }> = ({auth}) => {
             backgroundColor: 'rgba(255, 255, 255, 0.6)',
         }}>
             <Typography component={'h2'} textAlign={'center'} fontSize={36} fontWeight={700}>{data.title}</Typography>
-            {data.image && <Box textAlign={'center'}><img src={`http://localhost:5000${data.image}`}
+            {data.image && <Box textAlign={'center'}><img src={`${process.env.REACT_APP_API_URL}${data.image}`}
                                             style={{width: 'auto', maxHeight: '400px', margin: '0 auto'}} alt="poster"/></Box>}
             <Box display={'flex'} alignItems={'center'} mt={{xs: 2, md: 0}} gap={2}>
-                <Avatar src={`http://localhost:5000${data.user.avatar}`} sx={{
+                <Avatar src={`${process.env.REACT_APP_API_URL}${data.user.avatar}`} sx={{
                     height: {xs: '50px', md: '80px'},
                     width: {xs: '50px', md: '80px'}
                 }}/>

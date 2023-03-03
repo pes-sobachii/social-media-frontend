@@ -26,7 +26,7 @@ const CommentSection: React.FC<{ data: comment[], id: string }> = ({data, id}) =
                 return (
                     <div key={comment._id}>
                         <Box sx={{display: 'flex', alignItems: 'center', gap: 2, py: 2}}>
-                            <Avatar src={`http://localhost:5000${comment.author.avatar}`} sx={{
+                            <Avatar src={`${process.env.REACT_APP_API_UR}L${comment.author.avatar}`} sx={{
                                 height: {xs: '30px', md: '50px'},
                                 width: {xs: '30px', md: '50px'}
                             }}/>

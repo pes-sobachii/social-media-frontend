@@ -39,7 +39,6 @@ const Feed: React.FC<{ auth: IAuthUser }> = ({auth}) => {
 
     return (
         <div>
-            {/*<Loader />*/}
             <Grid container spacing={2}>
                 <Grid md={8} xs={12} order={{xs: 2, md: 1}} item>
                     {auth._id && <PostContainer avatar={auth.avatar}/>}
@@ -69,7 +68,7 @@ const Feed: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                                 >
                                     <Box gap="1rem" sx={flexStyle}>
                                         <Avatar sx={{height: '70px', width: '70px'}}
-                                                src={`http://localhost:5000${auth.avatar}`}/>
+                                                src={`${process.env.REACT_APP_API_URL}${auth.avatar}`}/>
                                         <Box>
                                             <Typography
                                                 variant="h4"
@@ -131,7 +130,7 @@ const Feed: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                                         <ListItemAvatar>
                                             <Avatar
                                                 alt={`${user.name}`}
-                                                src={`http://localhost:5000${user.avatar}`}/>
+                                                src={`${process.env.REACT_APP_API_URL}${user.avatar}`}/>
                                         </ListItemAvatar>
                                         <Link to={`/user/${user._id}`}>
                                             <ListItemText primary={user.name + ' ' + user.surname} secondary={`${user?.followers.length} subscribers`}/>

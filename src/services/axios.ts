@@ -1,16 +1,12 @@
 import axios, {InternalAxiosRequestConfig} from "axios";
-import {IAuthUser} from "../Types/UserTypes";
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: process.env.REACT_APP_API_URL
 })
 
 instance.interceptors.request.use((config:InternalAxiosRequestConfig) => {
-    // window.localStorage.setItem('authUser', '')
-    // const user: string | null = window.localStorage.getItem('authUser')
     const token: string | null = window.localStorage.getItem('token')
     config.headers.Authorization = token
-    // config.headers.Authorization = user ? JSON.parse(user).token : null
     return config
 })
 

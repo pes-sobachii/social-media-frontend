@@ -83,7 +83,7 @@ const Account: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                             height: {xs: '140px', md: '190px'},
                             width: {xs: '140px', md: '190px'},
                             display: 'inline-block'
-                        }} src={userData.avatar ? `http://localhost:5000${userData.avatar}` : noAvatar}/>
+                        }} src={userData.avatar ? `${process.env.REACT_APP_API_URL}${userData.avatar}` : noAvatar}/>
                     </div>
                     <div className={styles.activity}>
                         <ul>

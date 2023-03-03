@@ -72,7 +72,7 @@ const Search: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                                 }}>
                                     <ListItemAvatar>
                                         <Avatar alt={user.name + ''} sx={{width: {xs: '50px', sm:'100px'}, height: {xs: '50px', sm:'100px'}}}
-                                                src={`http://localhost:5000${user.avatar}`}/>
+                                                src={`${process.env.REACT_APP_API_URL}${user.avatar}`}/>
                                     </ListItemAvatar>
                                     <ListItemText
                                         sx={{flex: '1 1 auto'}}

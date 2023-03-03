@@ -36,7 +36,7 @@ const Post: React.FC<{ post: IFullPost, auth: IAuthUser }> = ({post, auth}) => {
         <div className={styles.post}>
             {post.image && <div className={styles.poster}>
                 <img
-                    src={`http://localhost:5000${post.image}`}
+                    src={`${process.env.REACT_APP_API_URL}${post.image}`}
                     alt=""/>
             </div>}
             <div className={styles.data}>
@@ -44,7 +44,7 @@ const Post: React.FC<{ post: IFullPost, auth: IAuthUser }> = ({post, auth}) => {
                     <Avatar
                         sx={{height: 40, width: 40}}
                         alt={post.user.name + ''}
-                        src={`http://localhost:5000${post.user.avatar}`}
+                        src={`${process.env.REACT_APP_API_URL}${post.user.avatar}`}
                     />
                     <Link to={`/user/${post.user._id}`}>
                         <h4>{post.user.name}</h4>

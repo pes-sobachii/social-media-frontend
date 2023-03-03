@@ -18,7 +18,7 @@ const PostContainer:React.FC<{ avatar: string }> = ({avatar}) => {
             backgroundColor: 'rgba(255, 255, 255, 0.6)',
         }}>
             <Avatar sx={{height: '45px', width: '45px'}}
-                    src={`http://localhost:5000${avatar}`}/>
+                    src={`${process.env.REACT_APP_API_URL}${avatar}`}/>
             <Link to={'/add-post'}>
                 <Button variant="contained">Write New Post</Button>
             </Link>

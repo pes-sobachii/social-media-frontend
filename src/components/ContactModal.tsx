@@ -45,7 +45,7 @@ const ContactModal:React.FC<{setOpen: (value: boolean) => void, open: boolean, d
                                     <ListItemAvatar>
                                         <Avatar
                                             alt={`${user.name}`}
-                                            src={`http://localhost:5000${user.avatar}`}/>
+                                            src={`${process.env.REACT_APP_API_URL}${user.avatar}`}/>
                                     </ListItemAvatar>
                                     <Link to={`/user/${user._id}`} onClick={() => setOpen(false)}>
                                         <ListItemText primary={user.name + ' ' + user.surname} secondary={`${user.followers.length} subscribers`}/>

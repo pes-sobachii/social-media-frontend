@@ -137,7 +137,7 @@ const Header: React.FC<{ auth: IAuthUser, setAuth: (val: IAuthUser) => void }> =
                     </Box>
 
                     {isAuth ? <Box sx={{flexGrow: 0, display: 'flex', alignItems: 'center', gap: 3}}>
-                        <Avatar alt={auth.name} src={`http://localhost:5000${auth.avatar}`}/>
+                        <Avatar alt={auth.name} src={`${process.env.REACT_APP_API_URL}${auth.avatar}`}/>
                         <Button color={'error'} variant={'contained'} sx={{fontSize: 11}} onClick={logOut}>Log out</Button>
                     </Box> : <ButtonGroup variant="contained" aria-label="outlined primary button group">
                         <RouterLink to={'/login'}>

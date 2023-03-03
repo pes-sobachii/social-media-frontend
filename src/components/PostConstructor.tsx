@@ -92,7 +92,7 @@ const PostConstructor: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                     Image</Button>
                 <input ref={inputRef} type="file" onChange={(e) => handleChangeFile(e, setImageUrl)} hidden/>
                 {imageUrl && <Box>
-                    <img src={`http://localhost:5000${imageUrl}`} alt="poster"/>
+                    <img src={`${process.env.REACT_APP_API_URL}${imageUrl}`} alt="poster"/>
                 </Box>}
             </Box>
             <TextField label="Title" value={titleValue} onChange={e => setTitleValue(e.target.value)} fullWidth={true}
