@@ -1,18 +1,27 @@
-import React, {useEffect, useState} from 'react';
-import { Menu as MenuIcon, LogoDevOutlined } from '@mui/icons-material';
+import React from 'react';
+import {LogoDevOutlined, Menu as MenuIcon} from '@mui/icons-material';
 import {Link as RouterLink, useNavigate} from "react-router-dom";
-import {ButtonGroup, Link, AppBar, Box, Toolbar, IconButton, Typography, Container, Avatar, Button, MenuItem, Menu} from "@mui/material";
+import {
+    AppBar,
+    Avatar,
+    Box,
+    Button,
+    ButtonGroup,
+    Container,
+    IconButton,
+    Link,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Typography
+} from "@mui/material";
 import {IAuthUser} from "../Types/UserTypes";
 
 const Header: React.FC<{ auth: IAuthUser, setAuth: (val: IAuthUser) => void }> = ({auth, setAuth}) => {
 
-    const [isAuth, setIsAuth] = useState(window.localStorage.getItem('token'))
+    const isAuth = !!auth._id
     const navigate = useNavigate()
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-
-    useEffect(() => {
-        setIsAuth(window.localStorage.getItem('token'))
-    }, [window.localStorage.getItem('token')])
 
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
@@ -41,8 +50,6 @@ const Header: React.FC<{ auth: IAuthUser, setAuth: (val: IAuthUser) => void }> =
             city: '',
         })
     }
-
-
 
     return (
         <AppBar position="static">
@@ -137,7 +144,7 @@ const Header: React.FC<{ auth: IAuthUser, setAuth: (val: IAuthUser) => void }> =
                     </Box>
 
                     {isAuth ? <Box sx={{flexGrow: 0, display: 'flex', alignItems: 'center', gap: 3}}>
-                        <Avatar alt={auth.name} src={`${process.env.REACT_APP_API_URL}${auth.avatar}`}/>
+                        <Avatar alt={auth.name} src={`http://localhost:5000${auth.avatar}`}/>
                         <Button color={'error'} variant={'contained'} sx={{fontSize: 11}} onClick={logOut}>Log out</Button>
                     </Box> : <ButtonGroup variant="contained" aria-label="outlined primary button group">
                         <RouterLink to={'/login'}>
