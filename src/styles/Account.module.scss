@@ -1,0 +1,45 @@
+.name {
+  text-align: center;
+  font-weight: 400;
+  padding-top: 15px;
+  font-size: 1.8rem;
+}
+
+.avatar{
+  text-align: center;
+}
+
+.bio, .activity, .avatar {
+  flex: 0 0 33.3%;
+  font-size: 1.7rem;
+  ul > * {
+    margin: 10px 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: 5px
+  }
+}
+
+.activity ul li {
+  justify-content: end;
+}
+
+@media (max-width: 900px) {
+  .bio, .activity {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .bio, .activity {
+    font-size: 1.1rem;
+  }
+}
+
+.posts {
+  padding: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
