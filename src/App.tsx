@@ -43,7 +43,7 @@ const App = () => {
             <Route path='/' element={<Feed auth={auth}/>}/>
             <Route path='/search' element={<Search auth={auth}/>}/>
             <Route path='/add-post' element={<PostConstructor auth={auth}/>}/>
-            {/*<Route path='/edit-post/:id' element={<PostConstructor auth={auth}/>}/>*/}
+            <Route path='/edit-post/:id' element={<PostConstructor auth={auth}/>}/>
             <Route path='/post/:id' element={<FullPost auth={auth}/>}/>
           </Routes>
         </Container>

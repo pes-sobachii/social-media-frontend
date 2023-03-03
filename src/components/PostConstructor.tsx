@@ -14,27 +14,27 @@ import handleChangeFile from "../utils/handleChangeFile";
 
 const PostConstructor: React.FC<{ auth: IAuthUser }> = ({auth}) => {
 
-    // const {id} = useParams() as { id: string | undefined }
+    const {id} = useParams() as { id: string | undefined }
     const [imageUrl, setImageUrl] = useState('')
     const [titleValue, setTitleValue] = useState('')
     const [tagsValue, setTagsValue] = useState('')
     const [textValue, setTextValue] = useState('')
     const inputRef = useRef<null | HTMLInputElement>(null)
     const {mutateAsync: createPost, isLoading: isCreating} = useCreatePost()
-    // const {mutateAsync: updatePost, isLoading: isUpdating} = useUpdatePost(id)
+    const {mutateAsync: updatePost, isLoading: isUpdating} = useUpdatePost(id)
 
-    // useEffect(() => {
-    //     if (id) {
-    //         PostService.getPost(id).then((data) => {
-    //             console.log(data)
-    //             setImageUrl(data.image)
-    //             setTitleValue(data.title)
-    //             setTextValue(data.text)
-    //             const tags = data.tags.map((tag:string) => tag.substring(1)).join(' ')
-    //             setTagsValue(tags)
-    //         }).catch((err) => console.warn(err))
-    //     }
-    // }, [])
+    useEffect(() => {
+        if (id) {
+            PostService.getPost(id).then((data) => {
+                console.log(data)
+                setImageUrl(data.image)
+                setTitleValue(data.title)
+                setTextValue(data.text)
+                const tags = data.tags.map((tag:string) => tag.substring(1)).join(' ')
+                setTagsValue(tags)
+            }).catch((err) => console.warn(err))
+        }
+    }, [])
 
 
     const inputStyles = {
@@ -55,14 +55,11 @@ const PostConstructor: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                 text: textValue,
                 tags
             }
-            // if (id) {
-            //     await updatePost({post, id})
-            // } else {
-            //     await createPost(post)
-            // }
-
+            if (id) {
+                await updatePost({post, id})
+            } else {
                 await createPost(post)
-
+            }
 
 
         } catch (err) {
@@ -86,7 +83,7 @@ const PostConstructor: React.FC<{ auth: IAuthUser }> = ({auth}) => {
                  border: '1px solid #dedddd',
                  backgroundColor: 'rgba(255, 255, 255, 0.6)',
              }}>
-            {isCreating && <Loader/>}
+            {(isCreating || isUpdating) && <Loader/>}
             <Typography variant={"h4"} textAlign={'center'}>
                 Create New Post
             </Typography>
