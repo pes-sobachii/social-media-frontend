@@ -1,10 +1,8 @@
 import React from 'react';
-import {Backdrop, Fade, List, ListItem, ListItemAvatar, ListItemText, Modal} from "@mui/material";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import {IUnauthUser} from "../Types/UserTypes";
 import {Link} from "react-router-dom";
+import {Box, Backdrop, Fade, List, ListItem, ListItemAvatar, ListItemText, Modal, Typography, Avatar} from "@mui/material";
+
+import {IUnauthUser} from "../Types/UserTypes";
 
 const ContactModal:React.FC<{setOpen: (value: boolean) => void, open: boolean, data: IUnauthUser[]}> = ({setOpen, open, data}) => {
 

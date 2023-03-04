@@ -15,6 +15,7 @@ import {
     Toolbar,
     Typography
 } from "@mui/material";
+
 import {IAuthUser} from "../Types/UserTypes";
 
 const Header: React.FC<{ auth: IAuthUser, setAuth: (val: IAuthUser) => void }> = ({auth, setAuth}) => {

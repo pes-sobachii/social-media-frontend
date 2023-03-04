@@ -1,10 +1,8 @@
 import React from 'react';
-import {Box} from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
+import {Box, Avatar, Button} from "@mui/material";
 import {Link} from "react-router-dom";
 
-const PostContainer:React.FC<{ avatar: string }> = ({avatar}) => {
+const NewPost:React.FC<{ avatar: string }> = ({avatar}) => {
     return (
         <Box sx={{
             display: "flex",
@@ -27,4 +25,4 @@ const PostContainer:React.FC<{ avatar: string }> = ({avatar}) => {
     );
 };
 
-export default PostContainer;
+export default NewPost;

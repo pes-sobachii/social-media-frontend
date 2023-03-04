@@ -1,16 +1,13 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
-import {Box, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography} from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import {LocationOnOutlined, WorkOutlineOutlined,} from "@mui/icons-material";
-import Button from "@mui/material/Button";
+import {Link, Navigate} from "react-router-dom";
+import {Avatar, Box, Divider, List, ListItem, ListItemAvatar, ListItemText, Typography, Grid} from "@mui/material";
+import {LocationOnOutlined, WorkOutlineOutlined} from "@mui/icons-material";
 import Post from "../components/Post";
-import PostContainer from "../components/PostContainer";
+import NewPost from "../components/NewPost";
 import Loader from "../components/Loader";
 import useGetAllPosts from "../services/hooks/postHooks/useGetAllPosts";
 import {IFullPost} from "../Types/PostsTypes";
 import {IAuthUser, IUnauthUser} from "../Types/UserTypes";
-import {Link, Navigate} from "react-router-dom";
 
 
 const Feed: React.FC<{ auth: IAuthUser }> = ({auth}) => {
@@ -41,7 +38,7 @@ const Feed: React.FC<{ auth: IAuthUser }> = ({auth}) => {
         <div>
             <Grid container spacing={2}>
                 <Grid md={8} xs={12} order={{xs: 2, md: 1}} item>
-                    {auth._id && <PostContainer avatar={auth.avatar}/>}
+                    {auth._id && <NewPost avatar={auth.avatar}/>}
                     {posts.map((post: IFullPost, index: number) => (
                         <Post key={index} auth={auth} post={post}/>
                     )).reverse()}

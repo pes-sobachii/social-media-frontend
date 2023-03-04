@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Avatar from '@mui/material/Avatar'
+import {Avatar, IconButton, Box} from '@mui/material'
 import {
     ChatBubbleOutlineOutlined,
     DeleteForever,
@@ -9,11 +9,10 @@ import {
     Visibility,
     Edit
 } from "@mui/icons-material";
-import IconButton from "@mui/material/IconButton";
+
 import {IFullPost} from "../Types/PostsTypes";
-import useToggleLike from "../services/hooks/postHooks/useToggleLike";
 import {IAuthUser} from "../Types/UserTypes";
-import Box from "@mui/material/Box";
+import useToggleLike from "../services/hooks/postHooks/useToggleLike";
 import useDeletePost from "../services/hooks/postHooks/useDeletePost";
 import styles from "../styles/Post.module.scss";
 

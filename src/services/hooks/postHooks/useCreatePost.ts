@@ -1,7 +1,5 @@
 import {useMutation} from "@tanstack/react-query";
-import {UsersService} from "../../users.service";
 import {useNavigate} from "react-router-dom";
-import {IAuthUser, ILogin} from "../../../Types/UserTypes";
 import {PostService} from "../../posts.service";
 import {ISetPost} from "../../../Types/PostsTypes";
 
@@ -12,7 +10,6 @@ const useCreatePost = () => {
 
     return useMutation(async (post: ISetPost) => await createPost(post), {
         onSuccess: ({data}) => {
-            console.log(data)
             navigate(`/post/${data._id}`)
         },
         onError: (res) => {

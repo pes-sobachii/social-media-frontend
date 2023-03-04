@@ -1,15 +1,9 @@
 import * as React from 'react';
 import {useRef, useState} from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {Link as RouterLink} from "react-router-dom";
-import {Alert} from "@mui/material";
+import {Alert, Typography, Box, Grid, Link, TextField, Button, Container} from "@mui/material";
+
 import {IAuthUser, IRegisterUser} from "../Types/UserTypes";
 import useRegister from "../services/hooks/userHooks/useRegister";
 import Loader from "../components/Loader";

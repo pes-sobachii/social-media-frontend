@@ -1,22 +1,18 @@
-import React, {useRef} from 'react';
-import {Link, useParams} from "react-router-dom";
-import Box from "@mui/material/Box";
-import {IAuthUser} from "../Types/UserTypes";
-import Typography from "@mui/material/Typography";
-import useGetPost from "../services/hooks/postHooks/useGetPost";
-import {IFullPost} from "../Types/PostsTypes";
-import Loader from "../components/Loader";
-import Avatar from "@mui/material/Avatar";
-import {Divider} from "@mui/material";
-import CommentSection from "../components/CommentSection";
-import IconButton from "@mui/material/IconButton";
+import React from 'react';
 import {
     ChatBubbleOutlineOutlined,
     FavoriteBorderOutlined,
     FavoriteOutlined,
-    Image,
     Visibility
 } from "@mui/icons-material";
+import {Divider, Box, Typography, Avatar, IconButton} from "@mui/material";
+import {Link, useParams} from "react-router-dom";
+
+import {IAuthUser} from "../Types/UserTypes";
+import useGetPost from "../services/hooks/postHooks/useGetPost";
+import {IFullPost} from "../Types/PostsTypes";
+import Loader from "../components/Loader";
+import CommentSection from "../components/CommentSection";
 import useToggleLike from "../services/hooks/postHooks/useToggleLike";
 
 const FullPost: React.FC<{ auth: IAuthUser }> = ({auth}) => {

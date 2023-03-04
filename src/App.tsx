@@ -1,12 +1,13 @@
+import React, {useState} from "react";
+import {Route, Routes} from "react-router-dom";
+import Container from "@mui/material/Container";
+
 import Account from "./pages/Account";
 import Header from "./components/Header";
-import {Route, Routes} from "react-router-dom";
 import Feed from "./pages/Feed";
 import PostConstructor from "./components/PostConstructor";
-import Container from "@mui/material/Container";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import React, {useState} from "react";
 import {IAuthUser} from "./Types/UserTypes";
 import FullPost from "./pages/FullPost";
 import Search from "./pages/Search";

@@ -1,9 +1,6 @@
 import React, {useState} from 'react';
-import Box from "@mui/material/Box";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
-import {Divider, TextField} from "@mui/material";
-import Button from "@mui/material/Button";
+import {Button, Divider, TextField, Typography, Avatar, Box} from "@mui/material";
+
 import {comment} from "../Types/PostsTypes";
 import useCreateComment from "../services/hooks/postHooks/useCreateComment";
 import Loader from "./Loader";

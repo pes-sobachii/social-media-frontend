@@ -16,7 +16,6 @@ const useLogin = (setAuth: (val: IAuthUser) => void) => {
         },
         onError: (res) => {
             console.log(res)
-            // window.localStorage.setItem('token', null)
         }
     })
 

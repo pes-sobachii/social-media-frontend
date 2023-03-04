@@ -9,7 +9,6 @@ const useCreateComment = () => {
 
     return useMutation(async ({id, text}:{id: string, text: string}) => await createComment(id, text), {
         onSuccess: (res) => {
-            console.log('comment', res)
             queryClient.invalidateQueries(['post'])
         },
         onError: (res) => {

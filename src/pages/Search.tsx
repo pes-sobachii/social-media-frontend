@@ -1,15 +1,11 @@
-import React, {ChangeEvent, useState} from 'react';
-import Box from "@mui/material/Box";
-import {List, ListItem, ListItemAvatar, ListItemButton, ListItemText, TextField} from "@mui/material";
-import Button from "@mui/material/Button";
-import {IAuthUser, IUnauthUser} from "../Types/UserTypes";
-import useSearchUsers from "../services/hooks/userHooks/useSearchUsers";
-import Typography from "@mui/material/Typography";
-import Avatar from "@mui/material/Avatar";
-import useToggleFollow from "../services/hooks/userHooks/useToggleFollow";
+import React, {useState} from 'react';
 import {Puff} from 'react-loader-spinner'
 import {Link, Navigate} from "react-router-dom";
-import Loader from "../components/Loader";
+import {List, ListItem, ListItemAvatar, ListItemButton, ListItemText, TextField, Box, Button, Typography, Avatar} from "@mui/material";
+
+import {IAuthUser, IUnauthUser} from "../Types/UserTypes";
+import useSearchUsers from "../services/hooks/userHooks/useSearchUsers";
+import useToggleFollow from "../services/hooks/userHooks/useToggleFollow";
 
 const Search: React.FC<{ auth: IAuthUser }> = ({auth}) => {
 

@@ -9,7 +9,6 @@ const useToggleLike = () => {
 
     return useMutation(async ({id, like}:{id: string, like: boolean}) => await toggleLike(id, like), {
         onSuccess: (res) => {
-            console.log('comment', res)
             queryClient.invalidateQueries(['post'])
         },
         onError: (res) => {
