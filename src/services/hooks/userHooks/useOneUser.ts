@@ -1,15 +1,14 @@
-import {UsersService} from "../../users.service";
-import {useQuery} from "@tanstack/react-query";
+import { UsersService } from '../../users.service'
+import { useQuery } from '@tanstack/react-query'
 
-const useOneUser = (id:String) => {
+const useOneUser = (id: String) => {
+	const { getUser } = UsersService
 
-    const {getUser} = UsersService
-
-    return useQuery(['user', 'one user', id], async () => await getUser(id), {
-        onError: (res) => {
-            console.log(res)
-        }
-    })
+	return useQuery(['user', 'one user', id], async () => await getUser(id), {
+		onError: (res) => {
+			console.log(res)
+		},
+	})
 }
 
 export default useOneUser
