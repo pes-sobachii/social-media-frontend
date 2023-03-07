@@ -207,7 +207,7 @@ const Header: React.FC<{
 						>
 							<Avatar
 								alt={auth.name}
-								src={`http://localhost:5000${auth.avatar}`}
+								src={`${process.env.REACT_APP_API_URL}${auth.avatar}`}
 							/>
 							<Button
 								color={'error'}

@@ -33,7 +33,7 @@ const CommentSection: React.FC<{ data: comment[]; id: string }> = ({
 					<div key={comment._id}>
 						<Box sx={{ display: 'flex', alignItems: 'center', gap: 2, py: 2 }}>
 							<Avatar
-								src={`${process.env.REACT_APP_API_UR}L${comment.author.avatar}`}
+								src={`${process.env.REACT_APP_API_URL}${comment.author.avatar}`}
 								sx={{
 									height: { xs: '30px', md: '50px' },
 									width: { xs: '30px', md: '50px' },
